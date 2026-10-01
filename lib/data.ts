@@ -1,4 +1,4 @@
-export const SITE={url:"https://companyflow.co.uk",title:"CompanyFlow — Digital Systems That Make Business Flow",description:"CompanyFlow builds websites, software, AI and automation systems that help modern businesses work smarter, move faster and grow."};
+export const SITE={url:"https://companyflow.co.uk",title:"CompanyFlow UK | Websites, Software, AI & Business Automation",description:"CompanyFlow is a UK digital technology company building websites, custom software, CRM and ERP systems, AI and automation for growing businesses."};
 export const NAV=[["Solutions","#solutions"],["Industries","#industries"],["Products","#products"],["Work","#work"],["About","#about"]] as const;
 export const SOLUTIONS=[
  ["Website & Digital Experience","High-performance websites designed to turn visitors into customers."],
