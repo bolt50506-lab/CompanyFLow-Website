@@ -17,10 +17,10 @@ export default function Footer() {
           <Logo />
           <p className="mt-3 max-w-sm">Digital systems that make business flow.</p>
           <a
-            href="mailto:hello@companyflow.co.uk"
+            href="mailto:alihotspot1@gmail.com"
             className="mt-4 inline-block text-sm text-slate-300 transition hover:text-white"
           >
-            hello@companyflow.co.uk
+            alihotspot1@gmail.com
           </a>
         </div>
 
