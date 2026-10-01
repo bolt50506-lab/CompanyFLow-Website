@@ -7,6 +7,12 @@ const L = [
   ["Work", "#work"],
   ["About", "#about"],
   ["Contact", "#contact"],
+  ["Web Design", "/web-design-uk"],
+  ["Custom Software", "/custom-software-development"],
+  ["CRM & ERP", "/crm-erp-development"],
+  ["AI Automation", "/ai-automation"],
+  ["WhatsApp", "/whatsapp-automation"],
+  ["E-commerce", "/ecommerce-development"],
 ];
 
 export default function Footer() {
