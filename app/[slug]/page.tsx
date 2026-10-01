@@ -76,11 +76,11 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: service.title,
     description: service.description,
-    alternates: { canonical: \`/\${params.slug}\` },
+    alternates: { canonical: `/${params.slug}` },
     openGraph: {
       title: service.title,
       description: service.description,
-      url: \`\${SITE.url}/\${params.slug}\`,
+      url: `${SITE.url}/${params.slug}`,
       siteName: "CompanyFlow",
       locale: "en_GB",
       type: "website",
@@ -98,18 +98,18 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
     "@graph": [
       {
         "@type": "Service",
-        "@id": \`\${SITE.url}/\${params.slug}#service\`,
+        "@id": `${SITE.url}/${params.slug}#service`,
         name: service.label,
         description: service.description,
-        provider: { "@id": \`\${SITE.url}/#organization\` },
+        provider: { "@id": `${SITE.url}/#organization` },
         areaServed: "GB",
-        url: \`\${SITE.url}/\${params.slug}\`,
+        url: `${SITE.url}/${params.slug}`,
       },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
-          { "@type": "ListItem", position: 2, name: service.label, item: \`\${SITE.url}/\${params.slug}\` },
+          { "@type": "ListItem", position: 2, name: service.label, item: `${SITE.url}/${params.slug}` },
         ],
       },
     ],
@@ -170,7 +170,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               <Link href="/" className="text-sm font-semibold text-slate-700 hover:text-ink">Back to all solutions →</Link>
             </div>
             <div className="mt-8 grid gap-4 md:grid-cols-3">
-              {related.map(([slug, item]) => <Link key={slug} href={\`/\${slug}\`} className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-lg"><p className="text-sm font-semibold text-acc">{item.label}</p><h3 className="mt-2 font-bold">{item.title}</h3><p className="mt-3 text-sm leading-6 text-slate-500">{item.description}</p></Link>)}
+              {related.map(([slug, item]) => <Link key={slug} href={`/${slug}`} className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-lg"><p className="text-sm font-semibold text-acc">{item.label}</p><h3 className="mt-2 font-bold">{item.title}</h3><p className="mt-3 text-sm leading-6 text-slate-500">{item.description}</p></Link>)}
             </div>
           </div>
         </section>
