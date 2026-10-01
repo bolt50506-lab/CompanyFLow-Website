@@ -23,6 +23,7 @@ const structuredData = {
       logo: `${SITE.url}/logo.svg`,
       description: SITE.description,
       email: "alihotspot1@gmail.com",
+      contactPoint: [{ "@type": "ContactPoint", telephone: "+923407465567", contactType: "sales", availableLanguage: ["English"] }],
     },
     {
       "@type": "WebSite",
@@ -47,6 +48,7 @@ const structuredData = {
       "@type": "Service",
       name,
       description,
+      serviceType: name,
       provider: { "@id": `${SITE.url}/#organization` },
       areaServed: "GB",
     })),
