@@ -2,6 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { SITE } from "@/lib/data";
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 
 const SERVICES = {
   "web-design-uk": {
@@ -115,6 +117,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      <Navbar />
       <header className="border-b border-white/10 bg-ink text-white">
         <div className="mx-auto max-w-6xl px-6 pb-20 pt-32 sm:pt-40">
           <Link href="/" className="text-sm text-acc hover:underline">← CompanyFlow UK</Link>
@@ -127,7 +130,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </header>
-      <main className="bg-paper text-ink">
+      <main id="top" className="bg-paper text-ink">
         <section className="py-20 sm:py-24">
           <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1.05fr_.95fr]">
             <div>
@@ -175,6 +178,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           <div className="mx-auto max-w-3xl px-6 text-center"><h2 className="text-3xl font-bold tracking-tight">Have a workflow you want to improve?</h2><p className="mt-4 leading-7 text-slate-600">Tell CompanyFlow what is slowing the business down and we can map the right digital approach.</p><a href="/#contact" className="mt-7 inline-flex rounded-full bg-ink px-6 py-3.5 font-semibold text-white hover:opacity-90">Talk to CompanyFlow →</a></div>
         </section>
       </main>
+      <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
     </>
   );

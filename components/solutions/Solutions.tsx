@@ -34,7 +34,7 @@ export default function Solutions() {
             <Reveal key={t} delay={index * 0.06}>
               <button type="button" onClick={() => setSolutionIndex(index)} onFocus={() => setSolutionIndex(index)} aria-pressed={solutionIndex === index}
                 className={`group relative flex min-h-[250px] h-full w-full flex-col overflow-hidden rounded-3xl border p-7 text-left transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_18px_50px_rgba(0,0,0,.3)] ${solutionIndex === index ? "border-acc/70" : "border-white/10"}`}>
-                <img src={image} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-25 transition duration-700 group-hover:scale-105 group-hover:opacity-35" />
+                <img src={image} alt="" aria-hidden="true" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-25 transition duration-700 group-hover:scale-105 group-hover:opacity-35" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-ink/20" />
                 <div className="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-acc2/20 blur-2xl transition duration-700 group-hover:-translate-x-6 group-hover:translate-y-6" />
                 <span className="relative text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">0{index + 1}</span>
@@ -47,7 +47,7 @@ export default function Solutions() {
 
         <Reveal>
           <div className="mt-8 overflow-hidden rounded-3xl border border-white/10 bg-white/[.04] lg:grid lg:grid-cols-[1.05fr_1fr]">
-            <div className="relative min-h-[300px] overflow-hidden"><img src={selected[2]} alt="" className="absolute inset-0 h-full w-full object-cover" /><div className="absolute inset-0 bg-gradient-to-r from-ink/10 via-ink/20 to-ink/80" /></div>
+            <div className="relative min-h-[300px] overflow-hidden"><img src={selected[2]} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" /><div className="absolute inset-0 bg-gradient-to-r from-ink/10 via-ink/20 to-ink/80" /></div>
             <div className="flex min-h-[300px] flex-col justify-center p-8 sm:p-10"><p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-acc">Selected solution</p><h3 className="text-3xl font-bold tracking-tight sm:text-4xl">{selected[0]}</h3><p className="mt-4 max-w-xl text-lg leading-8 text-slate-300">{selected[1]}</p></div>
           </div>
         </Reveal>
