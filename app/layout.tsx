@@ -11,22 +11,19 @@ export const metadata: Metadata = {
   },
   description: SITE.description,
   applicationName: "CompanyFlow",
-  keywords: [
-    "CompanyFlow",
-    "web development UK",
-    "custom software development",
-    "business automation",
-    "AI automation",
-    "CRM and ERP",
-    "WhatsApp automation",
-    "e-commerce development",
-    "digital systems",
-  ],
   authors: [{ name: "CompanyFlow", url: SITE.url }],
   creator: "CompanyFlow",
   publisher: "CompanyFlow",
   category: "technology",
-  alternates: { canonical: "/" },
+  referrer: "origin-when-cross-origin",
+  formatDetection: {
+    telephone: false,
+    address: false,
+    email: false,
+  },
+  alternates: {
+    canonical: "/",
+  },
   robots: {
     index: true,
     follow: true,
@@ -45,15 +42,26 @@ export const metadata: Metadata = {
     siteName: "CompanyFlow",
     locale: "en_GB",
     type: "website",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: SITE.title }],
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: SITE.title,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE.title,
     description: SITE.description,
-    images: [{ url: "/twitter-image", width: 1200, height: 630, alt: SITE.title }],
+    images: ["/twitter-image"],
   },
-  icons: { icon: "/icon.svg" },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export const viewport: Viewport = {
