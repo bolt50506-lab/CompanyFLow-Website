@@ -1,0 +1,8 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{@apply bg-paper text-ink antialiased overflow-x-hidden}
+:focus-visible{outline:2px solid #5b8cff;outline-offset:3px}
+.flow-line{stroke-dasharray:4 8;animation:dash 1.8s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-24}}
+.grad-text{@apply bg-gradient-to-r from-acc to-acc2 bg-clip-text text-transparent}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

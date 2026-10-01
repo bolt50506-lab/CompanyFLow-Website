@@ -1,0 +1,4 @@
+import { Reveal } from "@/components/ui/Reveal";
+import { PRODUCTS } from "@/lib/data";
+export default function Products(){return <section id="products" className="py-28"><div className="mx-auto max-w-6xl px-6"><Reveal><p className="mb-3 text-sm font-semibold text-acc2">Products</p><h2 className="text-4xl font-bold tracking-tighter sm:text-6xl">Built for real businesses.</h2></Reveal>
+ <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{PRODUCTS.map(([c,n,d],i)=><Reveal key={n} delay={i*.08}><article className="h-full rounded-3xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1.5 hover:border-acc2 hover:shadow-xl"><small className="font-semibold text-acc2">{c}</small><h3 className="my-2 text-2xl font-bold tracking-tight">{n}</h3><p className="text-slate-500">{d}</p></article></Reveal>)}</div></div></section>}
