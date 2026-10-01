@@ -10,6 +10,7 @@ import Cta from "@/components/cta/Cta";
 import ContactForm from "@/components/contact/ContactForm";
 import DirectContact from "@/components/contact/DirectContact";
 import Footer from "@/components/footer/Footer";
+import SeoContent from "@/components/seo/SeoContent";
 import { SITE, SOLUTIONS } from "@/lib/data";
 
 const structuredData = {
@@ -68,6 +69,7 @@ export default function Home() {
         <Work />
         <About />
         <Cta />
+        <SeoContent />
         <section id="contact" className="bg-gradient-to-b from-blue-50 to-paper py-24">
           <div className="mx-auto max-w-3xl px-6">
             <DirectContact />
