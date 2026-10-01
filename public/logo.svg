@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 128" role="img" aria-labelledby="title desc">
+<title id="title">CompanyFlow</title>
+<desc id="desc">CompanyFlow logo</desc>
+<rect width="128" height="128" rx="30" fill="#0b0d12"/>
+<path d="M28 82c28 0 28-44 56-44h36" stroke="#46e0c0" stroke-width="12" fill="none" stroke-linecap="round"/>
+<circle cx="116" cy="38" r="12" fill="#5b8cff"/>
+<text x="152" y="82" fill="#f6f7f9" font-family="Arial,Helvetica,sans-serif" font-size="58" font-weight="700">Company</text>
+<text x="411" y="82" fill="#46e0c0" font-family="Arial,Helvetica,sans-serif" font-size="58" font-weight="400">Flow</text>
+</svg>
