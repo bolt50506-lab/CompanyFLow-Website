@@ -9,7 +9,7 @@ import About from "@/components/about/About";
 import Cta from "@/components/cta/Cta";
 import ContactForm from "@/components/contact/ContactForm";
 import Footer from "@/components/footer/Footer";
-import { SITE } from "@/lib/data";
+import { SITE, SOLUTIONS } from "@/lib/data";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -19,6 +19,7 @@ const structuredData = {
       "@id": `${SITE.url}/#organization`,
       name: "CompanyFlow",
       url: SITE.url,
+      logo: `${SITE.url}/logo.svg`,
       description: SITE.description,
       email: "hello@companyflow.co.uk",
     },
@@ -31,6 +32,23 @@ const structuredData = {
       publisher: { "@id": `${SITE.url}/#organization` },
       inLanguage: "en-GB",
     },
+    {
+      "@type": "WebPage",
+      "@id": `${SITE.url}/#webpage`,
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
+      isPartOf: { "@id": `${SITE.url}/#website` },
+      about: { "@id": `${SITE.url}/#organization` },
+      inLanguage: "en-GB",
+    },
+    ...SOLUTIONS.map(([name, description]) => ({
+      "@type": "Service",
+      name,
+      description,
+      provider: { "@id": `${SITE.url}/#organization` },
+      areaServed: "GB",
+    })),
   ],
 };
 
@@ -50,7 +68,10 @@ export default function Home() {
         <ContactForm />
       </main>
       <Footer />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
     </>
   );
 }
