@@ -8,6 +8,7 @@ import Work from "@/components/work/Work";
 import About from "@/components/about/About";
 import Cta from "@/components/cta/Cta";
 import ContactForm from "@/components/contact/ContactForm";
+import DirectContact from "@/components/contact/DirectContact";
 import Footer from "@/components/footer/Footer";
 import { SITE, SOLUTIONS } from "@/lib/data";
 
@@ -21,7 +22,7 @@ const structuredData = {
       url: SITE.url,
       logo: `${SITE.url}/logo.svg`,
       description: SITE.description,
-      email: "hello@companyflow.co.uk",
+      email: "alihotspot1@gmail.com",
     },
     {
       "@type": "WebSite",
@@ -65,13 +66,15 @@ export default function Home() {
         <Work />
         <About />
         <Cta />
-        <ContactForm />
+        <section id="contact" className="bg-gradient-to-b from-blue-50 to-paper py-24">
+          <div className="mx-auto max-w-3xl px-6">
+            <DirectContact />
+            <ContactForm />
+          </div>
+        </section>
       </main>
       <Footer />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
     </>
   );
 }
