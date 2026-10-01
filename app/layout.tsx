@@ -6,15 +6,16 @@ import { Providers } from "@/components/ui/Reveal";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: SITE.title,
-    template: "%s | CompanyFlow",
+    default: "CompanyFlow UK | Web Design, Software, AI & Automation",
+    template: "%s | CompanyFlow UK",
   },
-  description: SITE.description,
+  description: "CompanyFlow UK builds high-performance websites, custom software, CRM and ERP systems, AI and automation for growing businesses.",
   applicationName: "CompanyFlow",
   authors: [{ name: "CompanyFlow", url: SITE.url }],
   creator: "CompanyFlow",
   publisher: "CompanyFlow",
   category: "technology",
+  classification: "Business technology and digital services",
   referrer: "origin-when-cross-origin",
   formatDetection: {
     telephone: false,
