@@ -5,6 +5,7 @@ import Products from "@/components/products/Products";
 import Industries from "@/components/industries/Industries";
 import Process from "@/components/process/Process";
 import Work from "@/components/work/Work";
+import About from "@/components/about/About";
 import Cta from "@/components/cta/Cta";
 import ContactForm from "@/components/contact/ContactForm";
 import Footer from "@/components/footer/Footer";
@@ -44,14 +45,12 @@ export default function Home() {
         <Industries />
         <Process />
         <Work />
+        <About />
         <Cta />
         <ContactForm />
       </main>
       <Footer />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
     </>
   );
 }
