@@ -8,4 +8,50 @@ import Work from "@/components/work/Work";
 import Cta from "@/components/cta/Cta";
 import ContactForm from "@/components/contact/ContactForm";
 import Footer from "@/components/footer/Footer";
-export default function Home(){return <><Navbar/><main id="top"><Hero/><Solutions/><Products/><Industries/><Process/><Work/><Cta/><ContactForm/></main><Footer/></>}
+import { SITE } from "@/lib/data";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE.url}/#organization`,
+      name: "CompanyFlow",
+      url: SITE.url,
+      description: SITE.description,
+      email: "hello@companyflow.co.uk",
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE.url}/#website`,
+      name: "CompanyFlow",
+      url: SITE.url,
+      description: SITE.description,
+      publisher: { "@id": `${SITE.url}/#organization` },
+      inLanguage: "en-GB",
+    },
+  ],
+};
+
+export default function Home() {
+  return (
+    <>
+      <Navbar />
+      <main id="top">
+        <Hero />
+        <Solutions />
+        <Products />
+        <Industries />
+        <Process />
+        <Work />
+        <Cta />
+        <ContactForm />
+      </main>
+      <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+    </>
+  );
+}
