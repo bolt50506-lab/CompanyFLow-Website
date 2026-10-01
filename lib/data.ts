@@ -6,7 +6,8 @@ export const SOLUTIONS=[
  ["AI & Automation","Intelligent workflows that reduce repetitive work and respond faster.","https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=85"],
  ["WhatsApp Automation","Turn conversations into customer journeys, support and sales workflows.","https://images.unsplash.com/photo-1614680376593-902f74cf0d41?auto=format&fit=crop&w=1400&q=85"],
  ["E-commerce","Modern online stores designed for conversion, retention and growth.","https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=85"],
- ["Custom Software","Purpose-built technology for businesses with problems off the shelf software can't solve.","https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85"] as const;
+ ["Custom Software","Purpose-built technology for businesses with problems off the shelf software can't solve.","https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85"]
+] as const;
 export const PRODUCTS=[
  ["AI & Customer Automation","AgentHub","AI-powered customer conversations, lead management and automation."],
  ["Travel Technology","Travel Platform","Modern technology for travel agencies, bookings and operations."],
