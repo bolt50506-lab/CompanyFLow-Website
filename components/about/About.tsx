@@ -8,8 +8,8 @@ export default function About(){
    <Reveal>
     <p className="mb-3 text-sm font-semibold text-acc2">About CompanyFlow</p>
     <h2 className="max-w-[13ch] text-4xl font-bold tracking-tighter sm:text-6xl">Technology should make business flow.</h2>
-    <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">CompanyFlow is a UK digital technology company building websites, software, AI and automation systems for businesses that want their tools to work together.</p>
-    <p className="mt-4 max-w-xl leading-7 text-slate-500">We start with how the business actually works, then design the digital experience around the people, processes and systems behind it.</p>
+    <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">CompanyFlow is a UK digital technology company specialising in web design and development, custom software, CRM and ERP systems, AI automation, WhatsApp automation and e-commerce solutions. We build connected digital systems for businesses that want their technology to work together.</p>
+    <p className="mt-4 max-w-xl leading-7 text-slate-500">We start with how the business actually works, then design the digital experience around the people, processes and systems behind it — from customer websites and online stores to internal software, CRM, ERP and automated workflows.</p>
    </Reveal>
    <Reveal delay={.08}>
     <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-ink p-6 text-white shadow-2xl shadow-slate-300/30 sm:p-8">
