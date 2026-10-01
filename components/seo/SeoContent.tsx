@@ -7,6 +7,16 @@ const FAQ = [
   ["How do I start a project with CompanyFlow?", "Contact CompanyFlow with your business goal, current workflow or problem. The team can then map the required website, software, automation or integration work."],
 ] as const;
 
+const SERVICES = [
+  ["/web-design-uk", "Web Design & Development", "Websites built around customer journeys, performance and enquiries."],
+  ["/custom-software-development", "Custom Software", "Purpose-built business software for workflows that off-the-shelf tools cannot cover."],
+  ["/crm-erp-development", "CRM & ERP Development", "Connected customer, sales, operations and reporting systems."],
+  ["/ai-automation", "AI & Automation", "Practical AI workflows that reduce repetitive work and speed up response."],
+  ["/whatsapp-automation", "WhatsApp Automation", "Customer conversations connected to lead, support and follow-up workflows."],
+  ["/ecommerce-development", "E-commerce Development", "Conversion-focused online stores connected to the wider business."],
+  ["/business-automation", "Business Automation", "Automated handoffs across websites, CRM, messaging and internal systems."],
+] as const;
+
 export default function SeoContent() {
   return (
     <section id="faq" className="bg-paper py-28" aria-labelledby="faq-heading">
@@ -28,6 +38,20 @@ export default function SeoContent() {
               <p className="mt-4 leading-7 text-slate-600">{answer}</p>
             </details>
           ))}
+        </div>
+        <div className="mt-16 border-t border-slate-200 pt-12">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">CompanyFlow services</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight">Explore our specialist service pages.</h2>
+          <p className="mt-4 max-w-2xl leading-7 text-slate-600">Explore each area in more detail, including common use cases, capabilities and how it can fit into a connected business workflow.</p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {SERVICES.map(([href, title, description]) => (
+              <a key={href} href={href} className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-lg">
+                <h3 className="font-bold text-slate-900">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-500">{description}</p>
+                <span className="mt-4 inline-block text-sm font-semibold text-acc2">Explore service →</span>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
