@@ -18,13 +18,12 @@ export default function ContactForm(){
     name:d.name,company:d.company,email:d.email,phone:d.phone,industry:d.industry,website:d.website,
     services:d.needs.join(", "),description:d.description,budget:d.budget,
    });
-   const r=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body});
+   const r=await fetch("/__forms.html",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body});
    setRes(r.ok?"ok":"fail");
   }catch{setRes("fail")}
  }
  const mail=`mailto:alihotspot1@gmail.com?subject=Project%20enquiry&body=${encodeURIComponent(`Project enquiry\n\nName: ${d.name}\nCompany: ${d.company}\nEmail: ${d.email}\nPhone: ${d.phone}\nIndustry: ${d.industry}\nWebsite: ${d.website}\nServices needed: ${d.needs.join(", ")}\nProject description: ${d.description}\nBudget: ${d.budget}`)}`;
  return <section aria-labelledby="contact-heading" className="bg-gradient-to-b from-blue-50 to-paper py-24"><div className="mx-auto max-w-2xl rounded-3xl border border-slate-200 bg-white p-8 sm:p-10">
- <form name="project-enquiry" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="form-name" value="project-enquiry" readOnly/><input name="bot-field"/><input name="name"/><input name="company"/><input name="email"/><input name="phone"/><input name="industry"/><input name="website"/><input name="services"/><textarea name="description"/><input name="budget"/></form>
  <h2 id="contact-heading" className="sr-only">Start a project with CompanyFlow</h2>
  {s===1&&<><h3 className="mb-5 text-2xl font-bold tracking-tight">What do you need?</h3><div className="flex flex-wrap gap-2.5">{NEEDS.map(n=><label key={n}><input type="checkbox" className="peer sr-only" checked={d.needs.includes(n)} onChange={()=>setD({...d,needs:d.needs.includes(n)?d.needs.filter(x=>x!==n):[...d.needs,n]})}/><span className="inline-block cursor-pointer rounded-full border border-slate-300 px-4 py-2.5 peer-checked:bg-ink peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-acc2">{n}</span></label>)}</div></>}
  {s===2&&<><h3 className="mb-5 text-2xl font-bold tracking-tight">Tell us about your business</h3><div className="grid gap-3 sm:grid-cols-2">{([["name","Name","text"],["company","Company","text"],["email","Email","email"],["phone","Phone","tel"],["industry","Industry","text"],["website","Current website","url"]] as const).map(([k,l,t])=><label key={k} className="text-sm font-semibold">{l}<input type={t} className={inp+" mt-1 font-normal"} value={d[k]} onChange={f(k)}/></label>)}</div></>}
