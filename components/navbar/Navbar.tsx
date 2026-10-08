@@ -15,7 +15,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [s, setS] = useState(false), [o, setO] = useState(false), [a, setA] = useState("");
   const home = pathname === "/";
-  const target = (h: string) => home ? h : `/${h}`;
+  const target = (h: string) => h.startsWith("/") ? h : home ? h : `/${h}`;
 
   useEffect(() => {
     const f = () => setS(scrollY > 40);
