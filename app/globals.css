@@ -62,3 +62,35 @@ body{@apply bg-paper text-ink antialiased overflow-x-hidden}
  .cf-company .cf-principle h3{margin-top:50px}
  .cf-company .cf-step{grid-template-columns:45px 1fr 20px}
 }
+
+.cf-company .cf-focus{position:relative;min-height:320px;border:1px solid rgba(255,255,255,.1);border-radius:30px;background:linear-gradient(145deg,#101510,#080b09);padding:36px;overflow:hidden;transition:transform .55s cubic-bezier(.2,.8,.2,1),border-color .4s,background .4s}
+.cf-company .cf-focus:before{content:"";position:absolute;width:180px;height:180px;right:-70px;top:-70px;border-radius:50%;background:#a8ff3e;filter:blur(75px);opacity:.08;transition:.5s}
+.cf-company .cf-focus:hover{transform:translateY(-8px);border-color:rgba(168,255,62,.38);background:linear-gradient(145deg,#151c16,#080b09)}
+.cf-company .cf-focus:hover:before{opacity:.18}
+.cf-company .cf-focus>span{font-size:11px;font-weight:800;letter-spacing:.18em;color:#a8ff3e}
+.cf-company .cf-focus h3{margin-top:74px;font-size:34px;font-weight:600;letter-spacing:-.045em}
+.cf-company .cf-focus p{margin-top:13px;max-width:430px;color:#747d75;line-height:1.7}
+.cf-company .cf-focus>b{position:absolute;right:28px;bottom:28px;font-size:20px;font-weight:400;color:#4e5750;transition:.4s}
+.cf-company .cf-focus:hover>b{color:#a8ff3e;transform:translate(4px,-4px)}
+.cf-company .cf-person{position:relative;overflow:hidden}
+.cf-company .cf-person:after{content:"";position:absolute;right:-50px;bottom:-70px;width:190px;height:190px;border-radius:50%;background:#a8ff3e;filter:blur(80px);opacity:.04;transition:.5s}
+.cf-company .cf-person:hover:after{opacity:.12}
+.cf-company .cf-avatar{position:relative;overflow:hidden}
+.cf-company .cf-avatar:after{content:"";position:absolute;inset:-70%;background:linear-gradient(120deg,transparent 35%,rgba(255,255,255,.5),transparent 65%);transform:translateX(-100%) rotate(15deg);transition:.8s}
+.cf-company .cf-person:hover .cf-avatar:after{transform:translateX(100%) rotate(15deg)}
+.cf-company .cf-partners{border-top:1px solid rgba(255,255,255,.1);padding-top:28px}
+.cf-company .cf-partner-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.cf-company .cf-partner-row span{border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:12px 17px;color:#6f7871;font-size:12px;letter-spacing:.08em;text-transform:uppercase;transition:.35s}
+.cf-company .cf-partner-row span:hover{border-color:rgba(168,255,62,.35);color:#a8ff3e;transform:translateY(-3px)}
+.cf-company .cf-company-hero .cf-big-heading,.cf-company .cf-company-hero p,.cf-company .cf-company-hero .cf-green-button,.cf-company .cf-company-hero .cf-outline-button{animation:cf-rise .9s both}
+.cf-company .cf-company-hero .cf-big-heading{animation-delay:.08s}
+.cf-company .cf-company-hero p{animation-delay:.16s}
+.cf-company .cf-company-hero .cf-green-button{animation-delay:.23s}
+.cf-company .cf-company-hero .cf-outline-button{animation-delay:.29s}
+@keyframes cf-rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@media(max-width:767px){
+ .cf-company .cf-focus{min-height:280px;padding:30px}
+ .cf-company .cf-focus h3{margin-top:52px}
+ .cf-company .cf-partner-row{display:grid;grid-template-columns:1fr 1fr}
+ .cf-company .cf-partner-row span{text-align:center;padding:11px 8px;font-size:10px}
+}
