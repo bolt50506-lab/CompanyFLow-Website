@@ -1,32 +1,67 @@
 import { Reveal } from "@/components/ui/Reveal";
 
-const FLOW=[["01","Customer touchpoint","Website, WhatsApp or enquiry"],["02","Connected system","CRM, ERP, AI or custom software"],["03","Business action","Booking, payment, follow-up or operations"]];
+const FLOW = [
+  ["01","Discover","Understand the business, customers and the real problem."],
+  ["02","Design","Turn the problem into a clear digital experience and system."],
+  ["03","Build","Engineer the website, software, automation and integrations."],
+  ["04","Improve","Launch, measure and continuously make the flow better."],
+];
+
+const STATS = [["10+","Products & platforms"],["500+","Users reached"],["100%","Built around outcomes"]];
 
 export default function About(){
- return <section id="about" className="overflow-hidden bg-paper py-28">
-  <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
-   <Reveal>
-    <p className="mb-3 text-sm font-semibold text-acc2">About CompanyFlow</p>
-    <h2 className="max-w-[13ch] text-4xl font-bold tracking-tighter sm:text-6xl">Technology should make business flow.</h2>
-    <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">CompanyFlow is a UK digital technology company specialising in web design and development, custom software, CRM and ERP systems, AI automation, WhatsApp automation and e-commerce solutions. We build connected digital systems for businesses that want their technology to work together.</p>
-    <p className="mt-4 max-w-xl leading-7 text-slate-500">We start with how the business actually works, then design the digital experience around the people, processes and systems behind it — from customer websites and online stores to internal software, CRM, ERP and automated workflows.</p>
-   </Reveal>
-   <Reveal delay={.08}>
-    <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-ink p-6 text-white shadow-2xl shadow-slate-300/30 sm:p-8">
-     <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-acc/10 blur-3xl"/>
-     <div className="relative">
-      <p className="text-xs font-semibold uppercase tracking-[.18em] text-acc">The CompanyFlow approach</p>
-      <div className="mt-7 space-y-3">
-       {FLOW.map(([n,title,detail],i)=><div key={n} className="relative flex items-center gap-4">
-        <div className="relative z-10 grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[.05] text-xs font-semibold text-acc">{n}</div>
-        <div className="min-w-0 flex-1 rounded-2xl border border-white/10 bg-white/[.035] px-4 py-3"><p className="font-semibold">{title}</p><p className="mt-1 text-sm text-slate-400">{detail}</p></div>
-        {i<FLOW.length-1&&<span className="absolute left-5 top-10 h-5 w-px bg-gradient-to-b from-acc to-acc2" aria-hidden="true"/>}
-       </div>)}
-      </div>
-      <div className="mt-7 flex flex-wrap gap-2 text-xs font-medium text-slate-400"><span className="rounded-full border border-white/10 px-3 py-1.5">Web</span><span className="rounded-full border border-white/10 px-3 py-1.5">Software</span><span className="rounded-full border border-white/10 px-3 py-1.5">AI</span><span className="rounded-full border border-white/10 px-3 py-1.5">Automation</span></div>
-     </div>
+ return (
+  <section id="about" className="cf-home-company relative overflow-hidden bg-[#050706] py-28 text-white sm:py-36">
+   <div className="cf-home-company-glow cf-home-company-glow-a"/>
+   <div className="cf-home-company-glow cf-home-company-glow-b"/>
+   <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+    <div className="grid gap-16 lg:grid-cols-[.9fr_1.1fr] lg:items-end">
+     <Reveal>
+      <p className="cf-eyebrow">About CompanyFlow</p>
+      <h2 className="mt-5 max-w-[10ch] text-[clamp(3.5rem,7vw,7rem)] font-semibold leading-[.86] tracking-[-.07em]">
+       We build <span className="text-[#a8ff3e]">what matters.</span>
+      </h2>
+     </Reveal>
+     <Reveal delay={.08}>
+      <p className="max-w-2xl text-lg leading-8 text-[#9ca69e] sm:text-xl">
+       CompanyFlow connects websites, software, ecommerce, AI and automation into digital systems that help real businesses move faster.
+      </p>
+      <a href="/about/" className="cf-home-company-link mt-7 inline-flex">Explore CompanyFlow <span>↗</span></a>
+     </Reveal>
     </div>
-   </Reveal>
-  </div>
- </section>
+
+    <div className="mt-20 grid gap-3 lg:grid-cols-4">
+     {FLOW.map(([n,title,detail],i)=>(
+      <Reveal key={n} delay={i*.06}>
+       <article className="cf-home-company-card">
+        <span>{n}</span>
+        <h3>{title}</h3>
+        <p>{detail}</p>
+        <b>↗</b>
+       </article>
+      </Reveal>
+     ))}
+    </div>
+
+    <div className="mt-5 grid gap-5 lg:grid-cols-[1.2fr_.8fr]">
+     <Reveal>
+      <div className="cf-home-company-story">
+       <div>
+        <p className="cf-eyebrow">One connected flow</p>
+        <h3>From the first customer touchpoint to the final business action.</h3>
+       </div>
+       <div className="cf-home-company-line">
+        <span>Website</span><i>→</i><span>CRM / ERP</span><i>→</i><span>AI + Automation</span><i>→</i><span>Growth</span>
+       </div>
+      </div>
+     </Reveal>
+     <Reveal delay={.08}>
+      <div className="cf-home-company-stats">
+       {STATS.map(([n,l])=><div key={n}><strong>{n}</strong><span>{l}</span></div>)}
+      </div>
+     </Reveal>
+    </div>
+   </div>
+  </section>
+ );
 }
