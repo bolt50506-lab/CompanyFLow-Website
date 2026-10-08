@@ -16,10 +16,18 @@ const process = [
 ];
 
 const people = [
-  ["Ali Ahmed","Founder & Technology Lead","Product, software and digital systems"],
-  ["Product","Strategy & Experience","Turning complex requirements into clear journeys"],
-  ["Engineering","Software & Automation","Building the systems behind the experience"],
+  ["Ali Ahmed","Founder & Technology Lead","Product, software and digital systems","AA"],
+  ["Product","Strategy & Experience","Turning complex requirements into clear journeys","P"],
+  ["Engineering","Software & Automation","Building the systems behind the experience","E"],
 ];
+
+const focus = [
+  ["Vision","Make ambitious businesses easier to run, easier to buy from and easier to grow with technology that feels effortless."],
+  ["Mission","Combine strategy, design and engineering to turn real business problems into dependable digital products."],
+  ["Approach","Stay curious, remove unnecessary complexity, ship useful work and measure what changes after launch."],
+];
+
+const partners = ["Aurum Accessories","Lubab Collections","AgentHub","Destino Travels","CompanyFlow"];
 
 export default function CompanyPage() {
   return (
@@ -119,8 +127,8 @@ export default function CompanyPage() {
               <p className="cf-eyebrow">The CompanyFlow approach</p>
               <h2 className="cf-big-heading">One flow from idea to impact.</h2>
               <div className="mt-9">
-                <button className="cf-play" aria-label="Play CompanyFlow introduction"><span>▶</span></button>
-                <p className="mt-4 text-xs uppercase tracking-[.16em] text-[#69716b]">How we work</p>
+                <a href="#principles" className="cf-play" aria-label="Explore CompanyFlow approach"><span>▶</span></a>
+                <p className="mt-4 text-xs uppercase tracking-[.16em] text-[#69716b]">Explore our approach</p>
               </div>
             </Reveal>
             <div className="space-y-4">
@@ -137,12 +145,19 @@ export default function CompanyPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 py-32 lg:px-10 lg:py-40">
+        <section id="principles" className="mx-auto max-w-7xl px-6 py-32 lg:px-10 lg:py-40">
           <Reveal>
-            <p className="cf-eyebrow">What drives us</p>
-            <h2 className="cf-big-heading">Our principles.</h2>
+            <p className="cf-eyebrow">Vision / Mission / Approach</p>
+            <h2 className="cf-big-heading">Why CompanyFlow exists.</h2>
           </Reveal>
           <div className="mt-14 grid gap-4 md:grid-cols-3">
+            {focus.map(([t,d],i)=>(
+              <Reveal key={t} delay={i*.06}>
+                <article className="cf-focus"><span>0{i+1}</span><h3>{t}</h3><p>{d}</p><b>↗</b></article>
+              </Reveal>
+            ))}
+          </div>
+          <div className="mt-16 grid gap-4 md:grid-cols-3">
             {principles.map(([n,t,d],i)=>(
               <Reveal key={n} delay={i*.06}>
                 <article className="cf-principle"><span>{n}</span><h3>{t}</h3><p>{d}</p></article>
@@ -160,15 +175,19 @@ export default function CompanyPage() {
               </div>
             </Reveal>
             <div className="mt-14 grid gap-4 md:grid-cols-3">
-              {people.map(([name,role,desc],i)=>(
+              {people.map(([name,role,desc,initials],i)=>(
                 <Reveal key={name} delay={i*.06}>
                   <article className="cf-person">
-                    <div className="cf-avatar">{i === 0 ? "AA" : i === 1 ? "P" : "E"}</div>
+                    <div className="cf-avatar">{initials}</div>
                     <div><h3>{name}</h3><p>{role}</p><span>{desc}</span></div>
                   </article>
                 </Reveal>
               ))}
             </div>
+          </div>
+          <div className="cf-partners mt-20">
+            <p className="cf-eyebrow">Built with businesses we care about</p>
+            <div className="cf-partner-row">{partners.map((p,i)=><span key={p} style={{"--i":i} as React.CSSProperties}>{p}</span>)}</div>
           </div>
         </section>
 
