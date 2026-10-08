@@ -1,5 +1,5 @@
 export const SITE={url:"https://companyflow.co.uk",title:"CompanyFlow UK | Web Design, Software, AI & Automation",description:"CompanyFlow UK delivers web design and development, custom software, CRM and ERP systems, AI automation, WhatsApp automation and e-commerce solutions for growing businesses."};
-export const NAV=[["Solutions","#solutions"],["Industries","#industries"],["Products","#products"],["Work","#work"],["About","#about"]] as const;
+export const NAV=[["Solutions","#solutions"],["Industries","#industries"],["Products","#products"],["Work","#work"],["About","/about"]] as const;
 export const SOLUTIONS=[
  ["Website & Digital Experience","High-performance websites designed to turn visitors into customers.","https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1400&q=85"],
  ["CRM & ERP","Business systems that bring customers, operations and data into one place.","https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85"],
