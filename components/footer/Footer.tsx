@@ -41,7 +41,7 @@ export default function Footer() {
         </nav>
 
         <p className="border-t border-white/10 pt-6 text-sm text-slate-500 md:col-span-2">
-          CompanyFlow.co.uk — Digital systems for businesses that want to move forward.
+          © 2026 CompanyFlow. All Rights Reserved
         </p>
       </div>
     </footer>
